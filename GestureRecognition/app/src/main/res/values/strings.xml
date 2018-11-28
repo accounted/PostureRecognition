@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GestureRecognition</string>
+    <string name="app_name">Posture Recognition</string>
     <string name="action_settings">Settings</string>
     <string name="record">record</string>
     <string name="play">Play</string>
