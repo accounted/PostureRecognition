@@ -12,6 +12,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 
+import java.util.Arrays;
+import java.util.List;
+import android.graphics.Color;
+
+import com.semantive.waveformandroid.waveform.Segment;
+import com.semantive.waveformandroid.waveform.WaveformFragment;
+
+
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import java.io.File
@@ -40,7 +48,9 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         setSupportActionBar(toolbar)
+
 
         //FILE_RECORDING = "${externalCacheDir.absolutePath}/recorder.aac"
 
@@ -169,3 +179,4 @@ class MainActivity : AppCompatActivity() {
         return file.exists()
     }
 }
+
