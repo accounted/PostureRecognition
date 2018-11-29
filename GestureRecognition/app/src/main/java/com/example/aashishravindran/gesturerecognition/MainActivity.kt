@@ -7,17 +7,13 @@ import android.media.MediaRecorder
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 
-import java.util.Arrays;
-import java.util.List;
-import android.graphics.Color;
 
-import com.semantive.waveformandroid.waveform.Segment;
-import com.semantive.waveformandroid.waveform.WaveformFragment;
+
 
 
 import kotlinx.android.synthetic.main.activity_main.*
