@@ -38,7 +38,7 @@ yfilt2 = filter1('bp',z,'fc',[20000 22000],'fs',Fs);
 
 
 %%r = xcorr(x,y)
-filename1='Sitting_Aashish.aac';
+filename1='Tejas_Standing_demo.aac';
 [y,Fs]=audioread(filename1);
 Fs = 48000; 
 t = linspace(0,1,Fs); 
