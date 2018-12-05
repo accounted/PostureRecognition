@@ -2,10 +2,10 @@
 Fs=48000;                   % Sampling Frequency (Hz)
 %Tmax = 0.01;                               % Duration (sec)
 %t = linspace(0, Tmax, Tmax*Fs);
-m4AFilename = 'recorder1.aac';
- x = audioread(m4AFilename);
-  wavFilename = 'reco23.wav';
-  audiowrite(wavFilename,x,Fs);
+% m4AFilename = 'direct2.aac';
+%  x = audioread(m4AFilename);
+%   wavFilename = 'direct2.wav';
+%   audiowrite(wavFilename,x,Fs);
 
   
 %    figure(1)
@@ -27,21 +27,25 @@ m4AFilename = 'recorder1.aac';
 % x = fft2(z);
 % imagesc(abs(x));
     
-    filename='direct2.aac';
-[z,Fs]=audioread(filename);
-Fs = 48000; 
-%%t = linspace(0,1,Fs); 
-yfilt2 = filter1('bp',z,'fc',[20000 22000],'fs',Fs);
-% figure(2)
-% title('Direct Path')
-% plot(b)
+ filename='direct2.aac';
+ [z,Fs]=audioread(filename);
+ 
+
+%  wvtool(w)
+ Fs = 48000; 
+% Tmax = 3*10^4;                               % Duration (sec)
+ %%t = linspace(1*10^4, Tmax, Tmax*Fs);
+ yfilt2 = filter1('bp',z,'fc',[20000 22000],'fs',Fs);
+ figure(2)
+ title('Direct Path')
+ plot(yfilt2)
 
 
 %%r = xcorr(x,y)
-filename1='Tejas_Standing_demo.aac';
+filename1='anubhav_standing.aac';
 [y,Fs]=audioread(filename1);
 Fs = 48000; 
-t = linspace(0,1,Fs); 
+%t = linspace(0,1,Fs); 
 % [a,d1]=bandpass(y,[20000 22000],Fs)
 yfilt1 = filter1('bp',y,'fc',[20000 22000],'fs',Fs);
  figure(1)

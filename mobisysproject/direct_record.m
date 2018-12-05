@@ -1,19 +1,80 @@
 
+ Fs=48000;                   % Sampling Frequency (Hz)
+%Tmax = 0.01;                               % Duration (sec)
+%t = linspace(0, Tmax, Tmax*Fs);
+m4AFilename = 'anubuav_standing_dingin.aac';
+ x = audioread(m4AFilename);
+  wavFilename = 'anubuav_standing_dingin.wav';
+  audiowrite(wavFilename,x,Fs);
 
+  
+%    figure(1)
+%    [y,Fs]=audioread('reco23.wav');
+%    t=linspace(0,length(y)/Fs,length(y));
+%    plot(t,y)
+%    
+%        y = y(:,1);
+%     dt = 1/Fs;
+%     t = 0:dt:(length(y)*dt)-dt;
+%     plot(t,y); xlabel('Seconds'); ylabel('Amplitude');
+%     figure
+%     plot(periodogram(periodogram,y,'Fs',Fs,'NFFT',length(y)));
+    
+    
+%     filename='recorder1.aac';
+% [y,Fs]=audioread(filename);
+% z=highpass(y,Fs/4,Fs)
+% x = fft2(z);
+% imagesc(abs(x));
+    
+ filename='direct2.wav';
+ z=audioread(filename);
+ 
+t=linspace(0,5,length(z));
+ 
+%  z=z.*48000;
+%  figure(7)
+%   window=hann(48000);
+%    z=xcorr(z,window)
+%   plot(window)
+  
+%   %X=real(z);
+%   z=z.*window
+%  
 
+%  wvtool(w)
+% Fs = 48000; 
+% Tmax = 3*10^4;                               % Duration (sec)
+ %%t = linspace(1*10^4, Tmax, Tmax*Fs);
+% yfilt2 = filter1('bp',z,'fc',[20000 22000],'fs',Fs);
+figure(1)
+plot(t,z)
+title('Direct Path')
+xlabel('Time (ms)')
+ylabel('Amplitude')
 
-filename1='Tejas_Standing_demo.aac';
-[y,Fs]=audioread(filename1);
-Fs = 48000; 
-t = linspace(0,1,Fs); 
-% [a,d1]=bandpass(y,[20000 22000],Fs)
-yfilt1 = filter1('bp',y,'fc',[20000 22000],'fs',Fs);
- figure(1)
+%%r = xcorr(x,y)
+filename1='anubuav_standing_dingin.wav';
+y=audioread(filename1);
+info=audioinfo(filename1);
+% Fs = 48000; 
+ 
+t=linspace(0,5,length(y));
+
+%fa=.1/Fs;
+%t = linspace(0,1,Fs); 
+% [yfilt1,d1]=bandpass(y,[20000 22000],Fs)
+% figure(11)
+% bandpass(y,[20000 22000],Fs)
+%%figure(10)
+ %%wvtool(y)
+ yfilt1 = filter1('bp',y,'fc',[20000 22000],'fs',Fs);
+ figure(2)
 % subplot(2,1,1)
- plot(yfilt1)
+ plot(t,yfilt1)
+ xlabel('Time (ms)')
+ylabel('Amplitude')
  
- 
-spectrogram(yfilt1,256,250,256,1e3)
 
 
 
@@ -177,3 +238,12 @@ Wn=cutoff_freqs/nyquist_freq;    % non-dimensional frequency
 yfilt=filtfilt(filtb,filta,y);   % filter the data with zero phase 
 end
 
+
+% spectrogram(,'yaxis')
+
+%    Nfft=1024;
+%    f=linspace(0,Fs,Nfft);
+%    G=abs(fft(y,Nfft));
+%    plot(f(1:Nfft/2),G(1:Nfft/2))
+%    
+   
