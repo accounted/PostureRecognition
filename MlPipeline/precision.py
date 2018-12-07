@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Wed Dec  5 21:37:39 2018
+
+@author: Aashish Ravindran
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Tue Dec  4 12:43:46 2018
 
 @author: Aashish Ravindran
@@ -78,21 +85,23 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory('dataset/traaining_set2',
+training_set = train_datagen.flow_from_directory('dataset/train_3',
                                                  target_size = (256,256),
                                                  batch_size = 32,
                                                  class_mode = 'binary')
 
-test_set = test_datagen.flow_from_directory('dataset/test_set2',
+test_set = test_datagen.flow_from_directory('dataset/test_3',
                                             target_size = (256,256),
                                             batch_size = 32,
                                             class_mode = 'binary')
 
 classifier.fit_generator(training_set,
-                         steps_per_epoch=94,
+                         steps_per_epoch=14,
                          epochs =10,
                          validation_data = test_set,
-                         validation_steps=27
+                         validation_steps=44
                          )
+
+
 
 
