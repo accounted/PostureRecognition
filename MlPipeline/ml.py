@@ -2,7 +2,7 @@
 """
 Created on Tue Dec  4 12:43:46 2018
 
-@author: Aashish Ravindran
+@author: Aashish Ravindran, Dheeraj Reddy
 """
 
 # Convolutional Neural Network
