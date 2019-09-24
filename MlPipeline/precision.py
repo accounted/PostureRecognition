@@ -2,14 +2,14 @@
 """
 Created on Wed Dec  5 21:37:39 2018
 
-@author: Aashish Ravindran
+@author: Aashish Ravindran, Dheeraj Reddy
 """
 
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec  4 12:43:46 2018
 
-@author: Aashish Ravindran
+@author: Aashish Ravindran, Dheeraj Reddy
 """
 
 # Convolutional Neural Network
